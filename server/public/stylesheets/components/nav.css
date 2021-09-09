@@ -1,0 +1,23 @@
+.nav .nav__list .nav__item {
+  padding: var(--spacing-half);
+}
+
+.nav .nav__list .nav__item a.nav__link {
+  color: var(--tertiary);
+  fill: var(--tertiary);
+  text-decoration: none;
+}
+
+.nav .nav__list .nav__item:hover a.nav__link,
+.nav .nav__list .nav__item:hover a.nav__link svg,
+.nav .nav__list .nav__item a.nav__link:hover,
+.nav .nav__list .nav__item a.nav__link:hover svg {
+  color: var(--tertiary-light);
+  fill: var(--tertiary-light);
+  text-decoration: underline;
+}
+
+.nav .nav__list .nav__item a.nav__link:active {
+  color: var(--tertiary-dark);
+  text-decoration: underline;
+}
