@@ -1,0 +1,16 @@
+<% for(let usuario of usuarios) { %>
+
+<article id="userCard<%= usuario.id %>" class="card card--img-full badge <%= usuario.plano === 'VIP' ? 'badge-tertiary' : usuario.plano === 'Free' ? 'badge-secondary' : 'badge-primary' %>" data-badge="<%= usuario.plano %>">
+  <div class="card__img-container rounded">
+    <img src="<%= usuario.avatar %>" alt="Avatar do usuário <%= usuario.nome %>">
+  </div>
+  <div class="card__content-container">
+    <small class="bg-tertiary-light">ID <%= usuario.id %></small>
+    <h4 class="card__title"><%= usuario.nome %> <%= usuario.sobrenome %></h4>
+    <div class="btn-group btn-group--center">
+      <a href="/usuarios/<%= usuario.id %>" title="Ver detalhes do usuário <%= usuario.nome %>" class="btn btn--tertiary-dark">Ver Detalhes</a>
+    </div>
+  </div>
+</article>
+
+<% } %>
