@@ -8,18 +8,40 @@
     "imagem": "/images/caixa-de-som.png",
     "marca": "JBL",
     "sku": "jbl-cxsom-00",
-    "categoria": "Áudio e Vídeo"
+    "categoria": "Áudio e Vídeo",
+    "videoId": "KiL7ycBgh2o",
+    "especificacoes": {
+      "altura": "120 cm",
+      "largura": "60 cm",
+      "profundidade": "50 cm",
+      "peso": "12 kg",
+      "voltagem": "Bivolt",
+      "inputs": "USB, P2, P10",
+      "outputs": "P2, P10",
+      "conectividade": "WiFi, Bluetooth, cabos auxiliares"
+    }
   },
   {
     "id": 1,
     "nome": "Câmera Digital",
     "preco": 350,
     "precoPromo": 349,
-    "descricao": "Câmera Digital 12 MP com Zoom até 4x. Visão noturna e gravação de vídeos de até 1 minuto (Full HD). Compartilhe suas fotos online instantaneamente. Saiba mais.",
+    "descricao": "Câmera Digital 12 MP com Zoom até 4x. Visão noturna e gravação de vídeos de até 1 minuto (Full HD). Compartilhe suas fotos online instantaneamente.",
     "imagem": "/images/camera.png",
     "marca": "Sony",
     "sku": "son-camdig-01",
-    "categoria": "Áudio e Vídeo"
+    "categoria": "Áudio e Vídeo",
+    "videoId": "KiL7ycBgh2o",
+    "especificacoes": {
+      "altura": "6 cm",
+      "largura": "10 cm",
+      "profundidade": "4 cm",
+      "peso": "150 g",
+      "voltagem": "Bivolt",
+      "inputs": "USB, P2, P10",
+      "outputs": "P2, P10",
+      "conectividade": "WiFi, Bluetooth, cabos auxiliares"
+    }
   },
   {
     "id": 2,
@@ -30,7 +52,18 @@
     "imagem": "/images/controle-game.png",
     "marca": "PlayStation",
     "sku": "ps-ctrgm-02",
-    "categoria": "Games"
+    "categoria": "Games",
+    "videoId": "KiL7ycBgh2o",
+    "especificacoes": {
+      "altura": "20 cm",
+      "largura": "40 cm",
+      "profundidade": "10 cm",
+      "peso": "100 g",
+      "voltagem": "Bivolt",
+      "inputs": "P2",
+      "outputs": "P2",
+      "conectividade": "Bluetooth"
+    }
   },
   {
     "id": 3,
@@ -41,7 +74,18 @@
     "imagem": "/images/fone-de-ouvido.png",
     "marca": "B&O",
     "sku": "bng-fnov-03",
-    "categoria": "Áudio e Vídeo"
+    "categoria": "Áudio e Vídeo",
+    "videoId": "KiL7ycBgh2o",
+    "especificacoes": {
+      "altura": "50 cm",
+      "largura": "60 cm",
+      "profundidade": "15 cm",
+      "peso": "180 g",
+      "voltagem": "Bivolt",
+      "inputs": "USB",
+      "outputs": null,
+      "conectividade": "WiFi, Bluetooth, cabos auxiliares"
+    }
   },
   {
     "id": 4,
@@ -52,7 +96,18 @@
     "imagem": "/images/game.png",
     "marca": "PlayStation",
     "sku": "ps-game-04",
-    "categoria": "Games"
+    "categoria": "Games",
+    "videoId": "KiL7ycBgh2o",
+    "especificacoes": {
+      "altura": "4 cm",
+      "largura": "40 cm",
+      "profundidade": "20 cm",
+      "peso": "1.2 kg",
+      "voltagem": "Bivolt",
+      "inputs": "USB, P2, P10",
+      "outputs": "P2, P10",
+      "conectividade": "WiFi, Bluetooth"
+    }
   },
   {
     "id": 5,
@@ -63,7 +118,18 @@
     "imagem": "/images/gameboy.png",
     "marca": "Nintendo",
     "sku": "nin-gabo-05",
-    "categoria": "Games"
+    "categoria": "Games",
+    "videoId": "KiL7ycBgh2o",
+    "especificacoes": {
+      "altura": "20 cm",
+      "largura": "10 cm",
+      "profundidade": "5 cm",
+      "peso": "92 g",
+      "voltagem": "Bivolt",
+      "inputs": "",
+      "outputs": null,
+      "conectividade": "WiFi"
+    }
   },
   {
     "id": 6,
@@ -74,7 +140,18 @@
     "imagem": "/images/microfone.png",
     "marca": "B&O",
     "sku": "bng-micf-06",
-    "categoria": "Áudio e Vídeo"
+    "categoria": "Áudio e Vídeo",
+    "videoId": "KiL7ycBgh2o",
+    "especificacoes": {
+      "altura": "18 cm",
+      "largura": "8 cm",
+      "profundidade": "8 cm",
+      "peso": "135 g",
+      "voltagem": "Bivolt",
+      "inputs": "",
+      "outputs": "P2",
+      "conectividade": ""
+    }
   },
   {
     "id": 7,
@@ -85,18 +162,40 @@
     "imagem": "/images/notebook.png",
     "marca": "Acer",
     "sku": "ace-note-07",
-    "categoria": "Informática"
+    "categoria": "Informática",
+    "videoId": "KiL7ycBgh2o",
+    "especificacoes": {
+      "altura": "30 cm",
+      "largura": "45 cm",
+      "profundidade": "5 cm",
+      "peso": "422 g",
+      "voltagem": "110 V",
+      "inputs": "USB, Bluetooth",
+      "outputs": null,
+      "conectividade": "WiFi, cabos auxiliares"
+    }
   },
   {
     "id": 8,
     "nome": "Óculos Webcam",
     "preco": 1000,
     "precoPromo": 990,
-    "descricao": "Óculos com Webcam 20 MP. Transmite diretamente para o YouTube ou outro programa de streaming. Possui funcionalidade de compartilhamento de vídeos ao vivo no TikTok e no Instagram. Confira.",
+    "descricao": "Óculos com Webcam 20 MP. Transmite diretamente para o YouTube ou outro programa de streaming. Possui funcionalidade de compartilhamento de vídeos ao vivo no TikTok e no Instagram.",
     "imagem": "/images/oculos-com-webcam.png",
     "marca": "Samsung",
     "sku": "ssg-oclweb-08",
-    "categoria": "Áudio e Vídeo"
+    "categoria": "Áudio e Vídeo",
+    "videoId": "KiL7ycBgh2o",
+    "especificacoes": {
+      "altura": "20 cm",
+      "largura": "10 cm",
+      "profundidade": "15 cm",
+      "peso": "121 g",
+      "voltagem": "Bivolt",
+      "inputs": "",
+      "outputs": null,
+      "conectividade": "Bluetooth"
+    }
   },
   {
     "id": 9,
@@ -107,7 +206,18 @@
     "imagem": "/images/oculos-vr.png",
     "marca": "Samsung",
     "sku": "ssg-oclvrr-09",
-    "categoria": "Áudio e Vídeo"
+    "categoria": "Áudio e Vídeo",
+    "videoId": "KiL7ycBgh2o",
+    "especificacoes": {
+      "altura": "20 cm",
+      "largura": "10 cm",
+      "profundidade": "15 cm",
+      "peso": "121 g",
+      "voltagem": "Bivolt",
+      "inputs": "",
+      "outputs": null,
+      "conectividade": "Bluetooth"
+    }
   },
   {
     "id": 10,
@@ -118,7 +228,18 @@
     "imagem": "/images/pendrive.png",
     "marca": "Acer",
     "sku": "ace-pnd-10",
-    "categoria": "Informática"
+    "categoria": "Informática",
+    "videoId": "KiL7ycBgh2o",
+    "especificacoes": {
+      "altura": "6 cm",
+      "largura": "1 cm",
+      "profundidade": "0.8 cm",
+      "peso": "10 g",
+      "voltagem": null,
+      "inputs": "",
+      "outputs": "USB",
+      "conectividade": "USB"
+    }
   },
   {
     "id": 11,
@@ -129,6 +250,17 @@
     "imagem": "/images/smartwatch.png",
     "marca": "Samsung",
     "sku": "ssm-smtwtc-11",
-    "categoria": "Informática"
+    "categoria": "Informática",
+    "videoId": "KiL7ycBgh2o",
+    "especificacoes": {
+      "altura": "6 cm",
+      "largura": "10 cm",
+      "profundidade": "1 cm",
+      "peso": "8 g",
+      "voltagem": null,
+      "inputs": "",
+      "outputs": null,
+      "conectividade": "Wifi, Bluetooth"
+    }
   }
 ]
