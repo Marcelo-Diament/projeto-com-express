@@ -17,8 +17,10 @@
   filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, .4));
 }
 
-.card p {
+.card p,
+.card .card__description {
   display: -webkit-box;
+  font-weight: normal;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   margin: var(--spacing-half) auto var(--spacing);
@@ -72,8 +74,90 @@
   color: var(--tertiary);
 }
 
+.card .card__price--old {
+  color: var(--neutral-dark);
+}
+
+.card .card__price--old+.card__price {
+  display: inline-block;
+}
+
 .card .card__description {
   color: var(--dark);
+}
+
+.card .card__content-container ul li p {
+  margin: 0 auto;
+}
+
+.card .card__content-container .bio {
+  margin: var(--spacing-double) auto;
+  overflow: inherit;
+  padding: var(--spacing);
+  position: relative;
+}
+
+.card .card__content-container .bio::before {
+  bottom: 0;
+  content: open-quote;
+  filter: opacity(.1);
+  font-family: fantasy;
+  font-size: 10rem;
+  left: calc(var(--spacing-half)*-1);
+  position: absolute;
+  right: 0;
+  top: var(--spacing-double);
+  transform: rotate(15deg);
+  transform-origin: 0 0;
+  width: fit-content;
+}
+
+.single-page .card {
+  margin: var(--spacing-double) auto var(--spacing);
+  max-width: calc(100vw - var(--spacing-quadruple));
+  padding: var(--spacing-double);
+}
+
+.single-page .card .card__content-container {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.single-page .card .card__content-container .card__tags {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.single-page .card .card__content-container .card__tags .tag {
+  margin-right: var(--spacing-half);
+}
+
+.single-page .card .card__content-container .card__tags,
+.single-page .card .card__content-container .card__title,
+.single-page .card .card__content-container .card__prices,
+.single-page .card .card__content-container .btn-group {
+  flex: 1 0 100%;
+}
+
+.single-page .card .card__content-container .card__description {
+  flex: 2 1 60%;
+  margin: var(--spacing-half) auto var(--spacing);
+}
+
+.single-page .card .card__content-container .card__specifications {
+  flex: 1 1 40%;
+  margin: var(--spacing-half) auto var(--spacing);
+}
+
+.single-page .card .card__content-container .card__description p {
+  display: block;
+}
+
+.single-page .card .card__content-container .card__description p,
+.single-page .card .card__content-container .card__specifications table {
+  margin: var(--spacing-double) auto;
 }
 
 /* @media only screen and (min-width: 500px) {
@@ -157,6 +241,10 @@
 @media only screen and (min-width: 1041px) {
   .card {
     flex: 1 1 30%;
+  }
+
+  .single-page .card {
+    max-width: 1080px;
   }
 
   .card__img-container {

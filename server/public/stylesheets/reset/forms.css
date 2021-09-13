@@ -84,7 +84,16 @@ form>fieldset>div p+.input-group.input-group--radio {
 
 form .input-group input:not([type="radio"])+label,
 form textarea+label {
+  display: inline-block;
   order: -1;
+}
+
+form .input-group input:not([type="checkbox"]) {
+  display: inline-block;
+}
+
+form .input-group input[type="checkbox"]+label {
+  order: 0;
 }
 
 form .input-group input:required:not([type="radio"])+label::after,

@@ -14,6 +14,13 @@ form>fieldset select option {
   color: var(--secondary);
 }
 
+form input[type="checkbox"],
+form>fieldset input[type="checkbox"] {
+  height: var(--spacing-double);
+  margin: var(--spacing-quarter);
+  width: auto;
+}
+
 form input[type="radio"],
 form>fieldset input[type="radio"],
 form>fieldset>div input[type="radio"] {
@@ -69,6 +76,10 @@ form input[type="file"]::file-selector-button:active {
   background-color: var(--secondary-light);
   border: var(--border-secondary-dark);
   color: var(--secondary-dark);
+}
+
+input {
+  accent-color: var(--secondary);
 }
 
 ::placeholder {
