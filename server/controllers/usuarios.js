@@ -5,7 +5,8 @@ const controller = {
     res.render('usuarios', {
       titulo: 'Usuários',
       subtitulo: 'Você está na página de usuários',
-      usuarios: usuariosPlaceholder
+      usuarios: usuariosPlaceholder,
+      bannerTopo: '/images/banner-topo-usuarios-1564x472.png'
     });
   },
   show: (req, res, next) => {
