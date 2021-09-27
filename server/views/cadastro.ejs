@@ -1,0 +1,119 @@
+<%- include('./partials/head.ejs') %>
+<%- include('./partials/header.ejs') %>
+<main class="bg-light">
+
+  <section>
+    <h1 class="primary"><%= titulo %></h1>
+    <p class="primary-dark flex-item-full-row"><%= subtitulo %></p>
+  </section>
+
+  <section id="cadastro" class="bg-tertiary-dark">
+    <h2>Cadastre-se</h2>
+    <article>
+      <form action="" id="cadastroForm" method="POST">
+        <fieldset>
+          <legend>Dados Pessoais</legend>
+          <div class="input-group">
+            <input type="text" name="nome" id="nome" placeholder="Fulanito" required>
+            <label for="nome">Nome</label>
+          </div>
+          <div class="input-group">
+            <input type="text" name="sobrenome" id="sobrenome" placeholder="da Silva" required>
+            <label for="sobrenome">Sobrenome</label>
+          </div>
+          <div class="input-group">
+            <input type="text" name="apelido" id="apelido" placeholder="Fufu" required>
+            <label for="apelido">Apelido</label>
+          </div>
+          <div class="input-group">
+            <input type="date" name="nascimento" id="nascimento">
+            <label for="nascimento">Data de Nascimento</label>
+          </div>
+          <div class="input-group">
+            <input type="number" name="idade" id="idade" min="18" max="150" step="1">
+            <label for="idade">Idade</label>
+          </div>
+          <div class="input-group">
+            <input type="password" name="senha" id="senha" placeholder="fulanito@gmail.com" required>
+            <label for="senha">Senha</label>
+            <small class="tertiary-light">Ops... <a href="" class="primary" title="Recuperar senha">Esqueci minha senha</a>!</small>
+          </div>
+          <div class="input-group">
+            <input type="color" name="corPreferida" id="corPreferida" required>
+            <label for="corPreferida">Cor Preferida</label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Dados de Contato</legend>
+          <div class="input-group">
+            <input type="email" name="email" id="email" placeholder="fulanito@gmail.com" required>
+            <label for="email">email</label>
+          </div>
+          <div class="input-group">
+            <input type="tel" name="telefone" id="telefone" placeholder="+5511123456789" required>
+            <label for="telefone">Telefone</label>
+          </div>
+          <div class="input-group">
+            <input type="datetime-local" name="dataParaContato" id="dataParaContato" placeholder="+5511123456789" required>
+            <label for="dataParaContato">Melhor dia e hora para contato</label>
+          </div>
+          <div>
+            <p class="flex-item-full-row">Como prefere que te contatemos</p>
+            <div class="input-group input-group--radio">
+              <div>
+                <input type="radio" name="formaContato" id="formaContatoWhatsapp" value="Whatsapp">
+                <label for="formaContatoWhatsapp">Whatsapp</label>
+              </div>
+              <div>
+                <input type="radio" name="formaContato" id="formaContatoLigacao" value="Ligação">
+                <label for="formaContatoLigacao">Ligação</label>
+              </div>
+              <div>
+                <input type="radio" name="formaContato" id="formaContatoEmail" value="Email">
+                <label for="formaContatoEmail">Email</label>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p>Como prefere que te chamemos?</p>
+            <div class="input-group">
+              <select name="tratamento" id="tratamento" required>
+                <option disabled selected>Selecionar</option>
+                <optgroup label="Informais">
+                  <option value="nome">Primeiro Nome</option>
+                  <option value="apelido">Apelido</option>
+                  <option value="sobrenome">Sobrenome</option>
+                  <option value="nomeCompleto">Nome Completo</option>
+                </optgroup>
+                <optgroup label="Formais">
+                  <option value="vosMerce">Vós Mercê</option>
+                  <option value="vossaSenhoria">Vossa Senhoria</option>
+                </optgroup>
+                <optgroup label="Outros">
+                  <option value="docinhoDeCoco">Docinho de Côco</option>
+                  <option value="meuBem">Meu Bem</option>
+                </optgroup>
+              </select>
+            </div>
+          </div>
+          <div class="input-group">
+            <input list="msgVozOptions" id="ouveMsgVoz" name="ouveMsgVoz">
+            <label for="ouveMsgVoz">Ouve mensagem de voz?</label>
+            <datalist id="msgVozOptions">
+              <option value="Sim">Sempre ouço</option>
+              <option value="Às vezes">Só de vez em quando...</option>
+              <option value="Não">Jamais, nunca ouço!</option>
+            </datalist>
+          </div>
+        </fieldset>
+        <div class="btn-group btn-group--end">
+          <button class="btn btn--neutral-light" type="reset">Limpar</button>
+          <button class="btn btn--tertiary-dark" type="submit">Enviar</button>
+        </div>
+      </form>
+      <p class="tertiary-light">Ainda <a href="" title="Cadastre-se" class="primary-light">não tenho cadastro</a>!</p>
+    </article>
+  </section>
+
+</main>
+<%- include('./partials/footer.ejs') %>

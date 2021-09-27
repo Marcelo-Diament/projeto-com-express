@@ -6,6 +6,12 @@ const fs = require('fs'),
 // let usuarios = fs.readFileSync(path.join(__dirname, '..', 'data', 'usuariosPlaceholder.json'), 'utf-8')
 
 const controller = {
+  login: (req, res, next) => {
+    res.render('login', {
+      titulo: 'Login',
+      subtitulo: 'Preencha os dados e acesse seu perfil!'
+    })
+  },
   auth: (req, res, next) => {
     const { email, senha } = req.body
     const usuarioLogado = usuariosPlaceholder.filter(usuario => {
@@ -19,24 +25,24 @@ const controller = {
     })
 
     if (!usuarioLogado.length) {
-      res.send('MOLHOU PROCÊ')
-      // res.render('usuarios', {
-      //   titulo: 'A CASA CAIU',
-      //   subtitulo: 'MOLHOU! JÁ CHAMAMOS O FBI!',
-      //   usuarios: usuariosPlaceholder,
-      //   bannerTopo: '/images/banner-topo-usuarios-1564x472.png'
-      // })
+      // res.send('MOLHOU PROCÊ')
+      res.render('usuarios', {
+        titulo: 'A CASA CAIU',
+        subtitulo: 'MOLHOU! JÁ CHAMAMOS O FBI!',
+        usuarios: usuariosPlaceholder,
+        bannerTopo: '/images/banner-topo-usuarios-1564x472.png'
+      })
     }
 
     const usuario = JSON.parse(JSON.stringify(usuarioLogado[0], ['id', 'nome', 'sobrenome', 'avatar', 'email', 'plano', 'admin'], 4))
-    console.log(usuario)
-    res.send(usuario)
-    // res.render('usuario', {
-    //   titulo: 'Usuário',
-    //   subtitulo: 'Parabéns! Vc logou com sucesso!',
-    //   usuario: usuario,
-    //   bannerTopo: '/images/banner-topo-usuarios-1564x472.png'
-    // })
+    // console.log(usuario)
+    // res.send(usuario)
+    res.render('usuario', {
+      titulo: 'Usuário',
+      subtitulo: 'Parabéns! Vc logou com sucesso!',
+      usuario: usuario,
+      bannerTopo: '/images/banner-topo-usuarios-1564x472.png'
+    })
   }
 }
 
