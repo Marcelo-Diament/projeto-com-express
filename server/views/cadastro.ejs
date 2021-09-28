@@ -106,12 +106,33 @@
             </datalist>
           </div>
         </fieldset>
+        <fieldset>
+          <legend>Biografia</legend>
+          <div class="input-group">
+            <textarea name="bio" id="bio" cols="100%" rows="10" placeholder="Numa noite escura de Julho de 1921... (máximo de 480 caracteres)" maxlength="480"></textarea>
+            <label for="bio">Escreva uma breve história da sua vida...</label>
+            <small>Máximo de 480 caracteres.</small>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Termos e Aceites</legend>
+          <div class="input-group">
+            <div>
+              <input type="checkbox" name="optin" id="optin" checked>
+              <label for="optin">Desejo receber muuuitos descontos e propaganda desnecessária.</label>
+            </div>
+            <div>
+              <input type="checkbox" name="aceite" id="aceite" required>
+              <label for="aceite">Estou de acordo com todo e qualquer termo abusivo presente no contrato do Jefferson.</label>
+            </div>
+          </div>
+        </fieldset>
         <div class="btn-group btn-group--end">
           <button class="btn btn--neutral-light" type="reset">Limpar</button>
           <button class="btn btn--tertiary-dark" type="submit">Enviar</button>
         </div>
       </form>
-      <p class="tertiary-light">Ainda <a href="" title="Cadastre-se" class="primary-light">não tenho cadastro</a>!</p>
+      <p class="secondary-light">Ops! Na verdade já tenho cadastro... Só preciso mesmo é <a href="" title="Fazer Login" class="light">fazer login</a>!</p>
     </article>
   </section>
 
