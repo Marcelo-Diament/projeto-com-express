@@ -251,5 +251,29 @@
     "admin": false,
     "criadoEm": "2021-09-13T00:55:49.130Z",
     "modificadoEm": "2021-09-13T00:55:49.130Z"
+  },
+  {
+    "id": 12,
+    "nome": "Altair",
+    "sobrenome": "Julião de Jesus",
+    "apelido": "Julinho",
+    "nascimento": "1992-12-25",
+    "idade": "28",
+    "senha": "123",
+    "corPreferida": "#e13737",
+    "avatar": "",
+    "email": "altair.juliao@jeff.co",
+    "telefone": "+55 11 987 987 987",
+    "dataParaContato": "2021-09-29T20:30",
+    "formaContato": "Ligação",
+    "tratamento": "vosMerce",
+    "ouveMsgVoz": "Não",
+    "bio": "Testes Testes Testes Testes Testes Testes Testes Testes Testes Testes Testes Testes",
+    "optin": "on",
+    "aceite": "on",
+    "plano": "Free",
+    "criadoEm": "2021-09-29T23:29:23.505Z",
+    "modificadoEm": "2021-09-29T23:29:23.505Z",
+    "admin": false
   }
 ]

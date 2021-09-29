@@ -10,6 +10,20 @@ const controller = {
       usuarioAdmin: req.cookies.admin
     });
   },
+  add: (req, res, next) => {
+    const usuarios = fs.readFileSync(path.join(__dirname, '..', 'data', 'usuariosPlaceholder.json'), 'utf-8')
+    let usuariosNew = JSON.parse(usuarios)
+    let newUsuario = req.body
+    let newId = usuariosNew[usuariosNew.length - 1].id + 1
+    newUsuario.plano = 'Free'
+    newUsuario.criadoEm = new Date()
+    newUsuario.modificadoEm = new Date()
+    newUsuario.admin = false
+    newUsuario.id = newId
+    usuariosNew.push(newUsuario)
+    fs.writeFileSync(path.join(__dirname, '..', 'data', 'usuariosPlaceholder.json'), JSON.stringify(usuariosNew))
+    res.redirect('../../usuarios')
+  },
   login: (req, res, next) => {
     res.render('login', {
       titulo: 'Login',
@@ -20,6 +34,9 @@ const controller = {
   },
   auth: (req, res, next) => {
     res.redirect('../')
+  },
+  logout: (req, res, next) => {
+    res.clearCookie('usuario').clearCookie('admin').redirect('../../')
   }
 }
 
