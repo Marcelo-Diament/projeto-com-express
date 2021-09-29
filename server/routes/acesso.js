@@ -12,4 +12,7 @@ router.get('/login', acessoController.login) // Form de login
 router.post('/login', authMiddleware, acessoController.auth) // Execução de login
 router.get('/logout', acessoController.logout) // Execução de logout
 
+// ROTA DE ESQUECI A SENHA
+router.get('/recuperar-senha', acessoController.lostPass) // Form de recuperação de senha
+
 module.exports = router

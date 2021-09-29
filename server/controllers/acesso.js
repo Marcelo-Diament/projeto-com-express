@@ -37,6 +37,14 @@ const controller = {
   },
   logout: (req, res, next) => {
     res.clearCookie('usuario').clearCookie('admin').redirect('../../')
+  },
+  lostPass: (req, res, next) => {
+    res.render('lostPassword', {
+      titulo: 'Recuperação de Senha',
+      subtitulo: 'Preencha os dados e recupere sua senha!',
+      usuarioLogado: req.cookies.usuario,
+      usuarioAdmin: req.cookies.admin
+    });
   }
 }
 
