@@ -1,45 +1,42 @@
 const usuariosPlaceholder = require('../data/usuariosPlaceholder.json')
 
 const auth = async (req, res, next) => {
-  // Limpeza dos cookies usuario e admin
+  // LIMPEZA DE COOKIES
   res.clearCookie('usuario')
   res.clearCookie('admin')
 
-  // Captura do email e da senha a partir de request -> body
+  // CAPTURA DO EMAIL E SENHA ENVIADOS
   const { email, senha } = await req.body
 
-  // Busca por usuário com aquele email e senha
+  // BUSCA POR USUÁRIO RELACIONADO AOS DADOS ENVIADOS
   const usuarioLogado = usuariosPlaceholder.filter(usuario => {
     if (usuario.email === email) {
-      console.log('esse cara existe mesmo')
       if (usuario.senha === senha) {
-        console.log('esse cara sabe a senha mesmo')
         return usuario
       }
     }
   })
-
-  // Caso não haja esse usuário ou a senha esteja errada
+  
+  // CASO NÃO ENCONTREMOS UM USUÁRIO COM ESSES DADOS
   if (!usuarioLogado.length) {
     res.render('login', {
       titulo: 'Ops!',
-      subtitulo: 'Algo de errado não deu certo',
+      subtitulo: 'Algo de errado não deu certo...',
       usuarioLogado: req.cookies.usuario,
-      usuarioAdmin: req.cookies.admin,
+      usuarioAdmin: req.cookies.admin
     })
   }
+  
+  // FILTRAMOS ALGUNS CAMPOS COM O JSON.STRINGIFY (COMO A SENHA)
+  let usuario = JSON.parse(JSON.stringify(usuarioLogado[0], ['id', 'nome', 'sobrenome', 'apelido', 'nascimento', 'corPreferida', 'avatar', 'email', 'telefone', 'plano', 'admin']))
 
-  // Filtrando campos como a senha com JSON.stringify (função Replacer)
-  const usuario = JSON.parse(JSON.stringify(usuarioLogado[0], ['id', 'nome', 'sobrenome', 'avatar', 'email', 'plano', 'admin'], 4))
-
-  // Definindo cookies usuario (objeto) e admin (booleano)
+  // DEFINIMOS OS COOKIES USUÁRIO (OBJETO) E ADMIN (BOOLEANO)
   res.cookie('usuario', usuario)
   res.cookie('admin', `${usuarioLogado[0].admin}`)
 
-  // Segue o jogo
+  // CONTINUA PARA A PRÓXIMA ETAPA
   next()
 
-  // Return para não continuar executando após esse trecho
   return
 }
 

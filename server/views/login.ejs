@@ -1,5 +1,5 @@
-<%- include('./partials/head.ejs') %>
-<%- include('./partials/header.ejs') %>
+<%- include('./partials/head') %>
+<%- include('./partials/header') %>
 <main class="bg-light">
 
   <section>
@@ -14,13 +14,13 @@
         <fieldset>
           <legend>Dados de Acesso</legend>
           <div class="input-group">
-            <input type="email" name="email" id="email" placeholder="fulanito@gmail.com" required>
+            <input type="email" id="email" name="email" placeholder="fulanito@gmail.com" required>
             <label for="email">email</label>
           </div>
           <div class="input-group">
-            <input type="password" name="senha" id="senha" placeholder="fulanito@gmail.com" required>
-            <label for="senha">Senha</label>
-            <small class="tertiary-light">Ops... <a href="" class="primary" title="Recuperar senha">Esqueci minha senha</a>!</small>
+            <input type="password" id="senha" name="senha" required>
+            <label for="telefone">Senha</label>
+            <small class="tertiary-light">Ops... <a href="/acesso/recuperar-senha" class="primary">Esqueci minha senha</a>!</small>
           </div>
         </fieldset>
         <div class="btn-group btn-group--end">
@@ -28,9 +28,9 @@
           <button class="btn btn--tertiary-dark" type="submit">Enviar</button>
         </div>
       </form>
-      <p class="tertiary-light">Ainda <a href="" title="Cadastre-se" class="primary-light">não tenho cadastro</a>!</p>
+      <p class="tertiary-light">Ainda <a href="/acesso/cadastro" class="primary-light">não tenho cadastro</a>!</p>
     </article>
   </section>
 
 </main>
-<%- include('./partials/footer.ejs') %>
+<%- include('./partials/footer') %>

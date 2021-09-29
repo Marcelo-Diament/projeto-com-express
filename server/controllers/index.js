@@ -1,8 +1,17 @@
+const usuariosPlaceholder = require('../data/usuariosPlaceholder.json')
+const produtosPlaceholder = require('../data/produtosPlaceholder.json')
+
 const controller = {
-  index: function (req, res, next) {
+  index: (req, res, next) => {
     res.render('index', {
-      titulo: 'Index',
-      subtitulo: 'Você está na página principal'
+      titulo: 'Jeff Co.',
+      subtitulo: 'Confira nossos Produtos e Usuários',
+      usuarios: usuariosPlaceholder,
+      produtos: produtosPlaceholder,
+      usuarioLogado: req.cookies.usuario,
+      usuarioAdmin: req.cookies.admin,
+      bannerTopo: '/images/banner-topo-index-1564x472.png',
+      bannerMeio: '/images/banner-meio-index-1920x1080.png'
     });
   }
 }

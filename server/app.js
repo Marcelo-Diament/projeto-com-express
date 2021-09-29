@@ -1,53 +1,62 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const createError = require('http-errors'),
+  express = require('express'),
+  path = require('path'),
+  cookieParser = require('cookie-parser'),
+  logger = require('morgan'),
+  session = require('express-session')
 
-var indexRotas = require('./routes/index');
-var usuariosRotas = require('./routes/usuarios');
-var adminRotas = require('./routes/admin')
-var loginRotas = require('./routes/login')
+// ARQUIVOS DE ROTAS - IMPORTAÇÃO
+const indexRouter = require('./routes/index'),
+  usersRouter = require('./routes/users'),
+  acessoRouter = require('./routes/acesso'),
+  adminRouter = require('./routes/admin')
 
-const authMiddleware = require('./middlewares/auth')
+// ARQUIVO MIDDLEWARE - IMPORTAÇÃO
+const adminMiddleware = require('./middlewares/admin')
 
-var app = express();
+// APP
+const app = express()
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+// VIEW ENGINE - A PASTA DAS VIEWS E A SINTAXE (EJS)
+app.set('views', path.join(__dirname, 'views'))
+app.set('view engine', 'ejs')
 
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(logger('dev'))
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }))
 
-app.use(cookieParser());
-app.use(session({ secret: 'YWhNbGtEb2lkbw==', cookie: { maxAge: 60000 } }))
+// COOKIES E SESSION (PARSE E DEFINIÇÃO DA SESSION COM SEGREDO E TEMPO PARA EXPIRAÇÃO)
+app.use(cookieParser())
+app.use(session({ secret: 'QWhNdWxla2U=', cookie: { maxAge: 60000 } }))
 
-app.use(express.static(path.join(__dirname, 'public')));
+// PASTA PÚBLICA PARA ARQUIVOS ESTÁTICOS (IMG, JS, CSS...)
+app.use(express.static(path.join(__dirname, 'public')))
 
-app.use('/usuarios', usuariosRotas);
-app.use('/login', loginRotas);
-app.use('/', indexRotas);
+// ARQUIVOS DE ROTAS SENDO CHAMADOS PARA CADA INÍCIO DE ROTA
+app.use('/acesso', acessoRouter) // Acessos como Login, Logout e Cadastro
+app.use('/usuarios', usersRouter)
+app.use('/', indexRouter)
 
-app.use(authMiddleware)
+// A PARTIR DAQUI SOMENTE USUÁRIOS ADMNISTRADORES PODEM ACESSAR
+app.use(adminMiddleware)
 
-app.use('/admin', adminRotas);
+// ROTAS ADMINISTRATIVAS
+app.use('/admin', adminRouter)
 
-// catch 404 and forward to error handler
+// CAPTURA DO 404 E SEQUÊNCIA AO TRATAMENTO DO ERRO
 app.use(function (req, res, next) {
-  next(createError(404));
-});
+  next(createError(404))
+})
 
-// error handler
+// MANIPULAÇÃO DE ERRO
 app.use(function (err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+  // DEFINE LOCALS, EXIBINDO ERROS APENAS EM AMBIENTE DE DESENVOLVIMENTO
+  res.locals.message = err.message
+  res.locals.error = req.app.get('env') === 'development' ? err : {}
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
-});
+  // RENDERIZANDO A VIEW DE ERROS
+  res.status(err.status || 500)
+  res.render('error')
+})
 
-module.exports = app;
+module.exports = app
