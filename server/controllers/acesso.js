@@ -35,9 +35,6 @@ const controller = {
   auth: (req, res, next) => {
     res.redirect('../')
   },
-  logout: (req, res, next) => {
-    res.clearCookie('usuario').clearCookie('admin').redirect('../../')
-  },
   lostPass: (req, res, next) => {
     res.render('lostPassword', {
       titulo: 'Recuperação de Senha',
@@ -45,6 +42,47 @@ const controller = {
       usuarioLogado: req.cookies.usuario,
       usuarioAdmin: req.cookies.admin
     });
+  },
+  edit: (req, res, next) => {
+    const idBuscado = req.params.id.replace('/', '')
+
+    const usuariosOld = fs.readFileSync(path.join(__dirname, '..', 'data', 'usuariosPlaceholder.json'), 'utf-8')
+
+    let usuarios = JSON.parse(usuariosOld)
+    let usuario = usuarios.filter(usuario => usuario.id == idBuscado)[0]
+
+    let usuarioAtualizado = req.body
+    for (let prop in usuarioAtualizado) {
+      if (usuarioAtualizado[prop] !== "") {
+        usuario[prop] = usuarioAtualizado[prop]
+      }
+    }
+    usuario.modificadoEm = new Date()
+
+    usuarios.forEach(usuarioFinal => {
+      if (usuarioFinal.id == usuario.id) {
+        usuarioFinal = usuario
+        usuarioFinal.id = parseInt(usuario.id)
+      }
+    })
+
+    fs.writeFileSync(path.join(__dirname, '..', 'data', 'usuariosPlaceholder.json'), JSON.stringify(usuarios))
+
+    if (req.cookies.usuario.id === usuario.id) {
+      res.clearCookie('usuario').cookie('usuario', usuario)
+    }
+    res.render('user', {
+      titulo: 'Usuário',
+      subtitulo: `Usuário #${idBuscado}`,
+      usuario,
+      usuarioLogado: req.cookies.usuario,
+      usuarioAdmin: req.cookies.admin,
+      bannerTopo: '/images/banner-topo-usuario-1564x472.png',
+      bannerMeio: '/images/banner-meio-usuario-1920x1080.png'
+    })
+  },
+  logout: (req, res, next) => {
+    res.clearCookie('usuario').clearCookie('admin').redirect('../../')
   }
 }
 
