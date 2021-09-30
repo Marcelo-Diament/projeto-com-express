@@ -43,11 +43,22 @@ const controller = {
       usuarioAdmin: req.cookies.admin
     });
   },
+  update: (req, res, next) => {
+    const idBuscado = req.params.id.replace('/', '')
+    const usuariosOld = fs.readFileSync(path.join(__dirname, '..', 'data', 'usuariosPlaceholder.json'), 'utf-8')
+    let usuarios = JSON.parse(usuariosOld)
+    let usuario = usuarios.filter(usuario => usuario.id == idBuscado)[0]
+    res.render('userUpdate', {
+      titulo: 'Cadastro',
+      subtitulo: req.cookies.usuario ? `Verifique os dados e atualize os que precisar` : 'Preencha os dados e complete seu cadastro!',
+      usuarioLogado: req.cookies.usuario,
+      usuarioAdmin: req.cookies.admin,
+      usuarioEditando: usuario
+    })
+  },
   edit: (req, res, next) => {
     const idBuscado = req.params.id.replace('/', '')
-
     const usuariosOld = fs.readFileSync(path.join(__dirname, '..', 'data', 'usuariosPlaceholder.json'), 'utf-8')
-
     let usuarios = JSON.parse(usuariosOld)
     let usuario = usuarios.filter(usuario => usuario.id == idBuscado)[0]
 
